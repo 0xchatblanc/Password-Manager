@@ -1,70 +1,112 @@
-# Password-Manager by 0xtheghost
-## Table of Contents
+# 🔐 Password-Manager
 
-- [About](#About)
-- [Features](#Features)
-- [Setup And Installation](#SetupAndInstallation)
-- [Usage](#Usage)
-- [License](#License)
+## 📑 Table of Contents
 
-## About
+- [🔍 About](#about)
+- [✨ Features](#features)
+- [⚙️ Setup And Installation](#setup-and-installation)
+- [🚀 Usage](#usage)
+- [📜 License](#license)
 
-**Password-Manager** is a command-line interface (CLI) Password Manager that securely stores and manages passwords using encryption techniques. It utilizes `bcrypt` for hashing and verifying the master password, and `cryptography.fernet` for encrypting and decrypting data. It allows users to add, view, update, delete, and manage sensitive information, protected by a master password.
+---
 
-The program provides an interactive interface for managing sensitive information, stored in an encrypted file, with features such as key generation, password management, and JSON import/export.
+## 🔍 About
 
-## Features
+**Password-Manager** is an interactive **command-line interface (CLI)** tool designed to securely store and manage sensitive information. It uses powerful encryption techniques to ensure your data remains private and protected:
 
-- Master Password Protection: Secure your data with a hashed master password.
-- Encryption/Decryption: Uses Fernet encryption to secure sensitive data.
-- Key Management: Generate, load, and change encryption keys.
-- Data Management:
-    - Add or update data entries.
-    - View specific data entries or the entire dataset.
-    - Delete data entries.
-- Import/Export: Import and export data as JSON files.
-- Interactive CLI: Provides a simple menu-driven interface for managing data.
+- 🛡️ **bcrypt**: For hashing and verifying the master password.
+- 🔒 **cryptography.fernet**: For encrypting and decrypting data.
 
-## SetupAndInstallation
+This program allows you to:
+- Add, view, update, and delete your data.
+- Import/export JSON files.
+- Secure data with a master password.
+- Manage encryption keys dynamically.
+
+---
+
+## ✨ Features
+
+- 🔑 **Master Password Protection**: Secure your data using a hashed master password.
+- 🧩 **Encryption/Decryption**: Leverages Fernet encryption for secure storage.
+- 🔄 **Key Management**:
+  - Generate a new encryption key.
+  - Load an existing key.
+  - Re-encrypt data with a new key.
+- 📁 **Data Management**:
+  - Add or update entries easily.
+  - View specific entries or the entire dataset.
+  - Delete entries.
+- 📤 **Import/Export**: Seamlessly import or export data in JSON format.
+- 🖥️ **Interactive CLI**: User-friendly and intuitive menu-driven interface.
+
+---
+
+## ⚙️ Setup And Installation
+
+Follow these simple steps to set up **Password-Manager**:
+
 1. Clone the repository:
-``` bash
-git clone https://github.com/0xtheghost/Password-Manager.git
+```bash
+git clone https://github.com/0xchatblanc/Password-Manager.git
 cd Password-Manager
 ```
+
 2. Install the required dependencies:
-``` bash
+```bash
 pip install -r requirements.txt
 ```
-3. Run the application :
-``` bash
+
+3. Run the application:
+```bash
 python main.py
 ```
 
-## Usage
+---
 
-Upon starting the application, you will be prompted to enter the master password. If none exists, the program will guide you to set one.
+## 🚀 Usage
 
-### Menu Options:
-1. Show Data: View all stored data or data at a specific path.
-2. Add/Update Data: Add new data or update existing data at a given path.
-3. Delete Data: Remove data from a specified path.
-4. Change Key: Generate a new encryption key and re-encrypt the data.
-5. Export to JSON: Save your data into a JSON file.
-6. Import from JSON: Load data from an existing JSON file and merge it with the current data.
-7. Quit: Exit the application.
-### How It Works
-- **Encryption Key:** Stored in a file (`key.key`), used to encrypt and decrypt your data.
-- **Data Storage:** Encrypted data is saved in `data.enc`. The content is a JSON structure that holds key-value pairs.
-- **Master Password:** The master password is hashed and stored in `password.hash` using bcrypt. It must be provided to unlock the manager and perform actions.
-### Security Considerations
-- **Key Management:** The key file is crucial for decrypting your data. Do not lose it, or you will lose access to your stored information.
-- **Password Security:** The master password is hashed using bcrypt. However, make sure to choose a strong password to prevent brute-force attacks.
-### Example
-Here’s a quick example of how to add, view, and update data:
+Upon starting the application, you will be prompted to authenticate with your **master password**. If no master password exists, the application will guide you to set one.
+
+### 🛠️ Menu Options
+1. **Show Data** 📂: View all stored data or data at a specific path.
+2. **Add/Update Data** ✏️: Add new entries or update existing ones.
+3. **Delete Data** 🗑️: Remove entries from the dataset.
+4. **Change Key** 🔄: Generate a new encryption key and re-encrypt existing data.
+5. **Export to JSON** 📤: Save data as a JSON file.
+6. **Import from JSON** 📥: Load and merge data from a JSON file.
+7. **Quit** ❌: Exit the application.
+
+### 🔐 How It Works
+
+- **Encryption Key**: The key is stored in a file (`key.key`) and is essential for encrypting and decrypting your data.
+- **Data Storage**: Data is securely saved in an encrypted file (`data.enc`) using JSON formatting.
+- **Master Password**: The master password is hashed with bcrypt and stored in `password.hash` for authentication.
+
+### ⚠️ Security Considerations
+
+- **Key Management**: Losing the encryption key will make your data irretrievable. Keep it safe!
+- **Strong Password**: Choose a strong and unique master password to prevent unauthorized access.
+
+---
+
+## 🔧 Example
+
+Here’s a quick example of how to add, view, and update your data:
+
 1. Start the program and authenticate with your master password.
-2. Select option `2` to add or update data.
+2. Select option `2` (Add/Update Data).
 3. Provide a location path (e.g., `accounts/github`) and enter the value (e.g., `my-github-password`).
-4. To view the added data, select option `1` and input the same path (`accounts/github`).
+4. To view the added data, select option `1` (Show Data) and input the same path (`accounts/github`).
 
-## License
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/0xtheghost/Password-Manager/blob/main/LICENSE) file for details.
+---
+
+## 📜 License
+
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](https://github.com/0xchatblanc/Password-Manager/blob/main/LICENSE) file for more details.
+
+---
+
+## 💬 Stay Connected
+
+Created with ❤️ by **0xchatblanc**. For questions or suggestions, feel free to reach out or contribute to the repository! 🌟
